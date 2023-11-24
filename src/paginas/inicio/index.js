@@ -1,12 +1,18 @@
-import Banner from "Componentes/Banner";
+
+import styles from './inicio.module.css'
+import Post from "Componentes/Post";
+
+import posts from 'json/posts.json'
 
 export default function Inicio() {
     return (
-        <main>
-            <Banner />
 
-            <h1>Olá Mundo!</h1>
-        </main>
-
+            <ul className={styles.posts}>
+        {posts.map((post) => (
+            <li key={post.id}>
+            <Post post={post} />
+            </li>
+        ))}
+            </ul>
     )
 }
